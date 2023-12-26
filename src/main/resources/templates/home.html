@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>CareConnect - Home Page</title>
+
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+	<style>
+		.video-container {
+			z-index: -100;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	<div class="video-container">
+		<video autoplay muted loop>
+			<source src="/background.mp4" type="video/mp4">
+		</video>
+	</div>
+	
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container form-inline">
+			<a class="navbar-left" href="#" th:href="@{/}"><img src="/img/new_ok.png" /></a>
+			<div class="pull-right padding-top">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				
+
+				<form th:action="@{/doLogin}" method="post">
+					
+
+					<div class="form-group">
+						<input type="email" class="form-control" id="email" name = "email" placeholder="Email" required autofocus>
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control" id="password"  name="password" placeholder="Password" required autofocus>
+					</div>
+
+					<!--<div class="form-group">
+						<a sec:authorize="!isAuthenticated()" class="btn btn-success" href="#"
+							th:href="@{/doLogin}">Login</a>
+					</div>-->
+					
+					<div class="form-group">
+						<input type="submit" name="login-submit" id="login-submit"
+									class="form-control btn btn-primary" value="Log In" />
+							
+					</div>
+					
+					<a sec:authorize="!isAuthenticated()" class="form-control btn btn-primary" href="#" th:href="@{/patients/register}">New User ? Register Here</a>
+
+
+					<!--<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/login}">Home</a>
+				<a sec:authorize="!isAuthenticated()" class="navbar-brand" href="#" th:href="@{/login}">Login</a>
+				<a sec:authorize="!isAuthenticated()" class="navbar-brand" href="#" th:href="@{/patients/register}">New User ? Register Here</a>
+				<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>-->
+		</form>
+		</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	
+<!-- expired message -->
+				<div th:if="${param.expired}">
+					<br>
+					<div class="alert alert-info">Your session was expired due to inactivity, please login again !</div>
+				</div>
+				
+				<!-- invalid login message -->
+				<div th:if="${param.loginerror}">
+					<br>
+					<div class="alert alert-info">Invalid email/password, please login again !</div>
+				</div>
+				
+	<div class="container">
+		<h1>Welcome to CareConnect Portal</h1>
+	</div>
+</body>
+
+</html>

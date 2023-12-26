@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Care Connect</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container form-inline">
+					<a class="navbar-bar" href="#" th:href="@{/}"><img src="/img/new_ok.png" class="d-inline-block align-top" alt="" /></a>
+
+			<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!--<a class="navbar-brand" href="#" th:href="@{/}">CareConnect</a>-->
+			</div>
+		</div>
+	</nav>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+	<!-- Create HTML registration form -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- success message -->
+				
+					<div class="alert alert-info">Your account has been created successfully. The email address is: <th:block th:text="${patient.user.email}"></th:block>.
+						<br/>
+						Please login <a href= "/home" >here</a> to the system and start an appoint with your doctor. Thank you !
+					</div>
+					
+</div>
+					
+					
+					
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

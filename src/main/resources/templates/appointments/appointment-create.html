@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CareConnect</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container form-inline">
+							<a class="navbar-bar" href="#" th:href="@{/}"><img src="/img/new_ok.png" class="d-inline-block align-top" alt="" /></a>
+
+			<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="pull-right padding-top">
+				<!--<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/login}">Home</a>-->
+			    <a sec:authorize="isAuthenticated()" class="form-control btn btn-primary" href="#" th:href="@{/patients/home}">Back to appointments</a>
+								
+				<a sec:authorize="!isAuthenticated()" class="navbar-brand" href="#" th:href="@{/patients/register}">New User ? Register Here</a>
+				<a sec:authorize="isAuthenticated()" class="btn btn-danger" href="#" th:href="@{/logout}">Logout</a>
+				
+			</div>
+			
+		</div>
+	</nav>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="container">
+		<h1>CareConnect - Patient</h1>
+		Welcome <span sec:authentication="principal.username">User</span>
+	</div>
+	
+		<div class="container my-2">
+		
+		<h2>Make an appointment</h2>
+
+		<form action="#" th:action="@{/appointments}" th:object="${appointment}"
+			method="POST">
+			
+			<div class= "form-group">
+					<label class="control-label" for="doctor">Select Doctor</label>
+				<div th:each="doctor : ${doctors}">
+  <input name="doctor" type="radio" th:value="${doctor.doctorId}" th:text="${doctor.firstName} + ' ' + ${doctor.lastName} + ' - ' + ${doctor.specialization}" required autofocus="autofocus"/>
+				</div>
+</div>
+				
+				<input type="date" th:field="*{date}"
+				placeholder="Date" class="form-control mb-4 col-4">
+				
+				<input type="time" th:field="*{time}"
+				placeholder="Time" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{description}"
+				placeholder="Description" class="form-control mb-4 col-4">
+				
+				<br>
+				<button type="submit" class="btn btn-success"> Save Appointment</button>
+		</form>
+		
+		<hr>
+		
+		<!--<a th:href = "@{/patients/home}"> Back to Appointment List</a>-->
+	</div>
+</body>
+</html>

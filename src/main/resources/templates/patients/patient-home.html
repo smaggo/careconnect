@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CareConnect - Patient Home</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+	
+</head>
+
+<body>
+
+<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container form-inline">
+
+		<a class="navbar-bar" href="#" th:href="@{/}"><img src="/img/new_ok.png" class="d-inline-block align-top" alt="" /></a>
+
+
+					<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				
+<!--				<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/}">CareConnect</a> -->
+<div class="pull-right padding-top">
+				<!--	<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/login}">Home</a> -->
+				<a sec:authorize="isAuthenticated()" class="form-control btn btn-primary" href="#" th:href="@{/appointments/register}">Need an appointment?</a>
+				<a sec:authorize="isAuthenticated()" class="btn btn-danger" href="#" th:href="@{/logout}">Logout</a>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	
+	<div class="container">
+		<h1>CareConnect - Patient</h1>
+		Welcome <span sec:authentication="principal.username">User</span>
+	</div>
+	
+
+	
+	<div class="container my-2">
+	<h2>My Appointments</h2>
+	
+<!--	<a th:href = "@{/showNewAppointmentForm}" class="btn btn-primary btn-sm mb-3"> Add Appointment </a> -->
+	
+		<table border="1" class = "table table-striped table-responsive-md table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th>
+						
+							 Date
+					</th>
+					<th>
+					
+							Time
+					</th>
+					<th>
+					
+							Description
+					</th>
+						<th>
+						
+							 Doctor
+					</th>
+					
+					<th> Actions </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="appointment : ${appointments}">
+					<td th:text="${appointment.date}"></td>
+					<td th:text="${appointment.time}"></td>
+					<td th:text="${appointment.description}"></td>
+					<td th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName} + ' - ' + ${appointment.doctor.specialization}"></td>
+					<td> <a th:href="@{/appointments/showFormForUpdate/{id}(id=${appointment.appointmentId})}" class="btn btn-primary">Update</a>
+					<a class="btn btn-danger" disabled>Cancel</a>
+					    <!--<a th:href="@{/appointments/deleteAppointment/{id}(id=${appointment.appointmentId})}" class="btn btn-danger" disabled>Cancel</a> -->
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div th:if = "${totalPages > 1}">
+			<div class = "row col-sm-10">
+				<div class = "col-sm-2">
+					Total Rows: [[${totalItems}]] 
+				</div>
+				<div class = "col-sm-1">
+					<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+						<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+						<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+					</span>
+				</div>
+				<div class = "col-sm-1">
+					<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+					<span th:unless="${currentPage < totalPages}">Next</span>
+				</div>
+				
+				 <div class="col-sm-1">
+    				<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+					<span th:unless="${currentPage < totalPages}">Last</span>
+   				 </div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
