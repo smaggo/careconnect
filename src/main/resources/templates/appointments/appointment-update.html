@@ -7,6 +7,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
+			<script src="/js/datecheck.js"> </script>
+				    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </head>
 <body>
 	<!-- create navigation bar ( header) -->
@@ -62,7 +66,7 @@
 				<div class="form-group">
 						<label class="control-label" for="date"> Date </label> 
 						<input type="date" th:field="*{date}"
-				placeholder="Date" class="form-control mb-4 col-4"/>
+				placeholder="Date" class="form-control mb-4 col-4" onclick="restrictMinDate(this)"/>
 					</div>
 				
 				<div class="form-group">
@@ -87,5 +91,6 @@
 		
 		<!--<a th:href = "@{/patients/home}"> Back to Appointment List</a>-->
 	</div>
+	  
 </body>
 </html>
