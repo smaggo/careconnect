@@ -9,33 +9,33 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import com.samitamaggo.careconnect.entity.Appointment;
-import com.samitamaggo.careconnect.repository.AppointmentRepository;
+import com.samitamaggo.careconnect.entity.Patient;
+import com.samitamaggo.careconnect.repository.PatientRepository;
 
 @ExtendWith(MockitoExtension.class)
-public class AppointmentServiceTest {
+public class PatientServiceTest {
 
 	@Mock
-	private AppointmentRepository appointmentRepository;
+	private PatientRepository patientRepository;
 	
 	@InjectMocks
-    private AppointmentServiceImpl appointmentServiceImpl;
+    private PatientServiceImpl patientServiceImpl;
 
 	@Test
-    void getAppointmentFound() {
+    void getPatientFound() {
 		
-		Long appId = (long) 8;
-		Optional<Appointment> app = appointmentRepository.findById(appId);
+		Long appId = (long) 1;
+		Optional<Patient> app = patientRepository.findById(appId);
 		
 		assertThat(app).isNotNull();
        
     }
 	
 	@Test
-    void getAppointmentNotFound() {
+    void getPatientNotFound() {
 		
 		Long appId = (long) 100;
-		Optional<Appointment> app = appointmentRepository.findById(appId);
+		Optional<Patient> app = patientRepository.findById(appId);
 		
 		assertThat(app).isEmpty();
        
