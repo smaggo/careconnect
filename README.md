@@ -1,12 +1,12 @@
-![careconnect](img/new_ok.png)
+![careconnect](static/img/new_ok.png)
 
 Design
 =======
 
-Please refer to [document page](docs/README.md) and [design document](docs/design_document.md)
+Please refer to [document page](doc/README.md) and [design document](doc/design_document.md)
 
 Technologies
 =============
 
-Please refer to [technologies page](docs/technologies.md).
+Please refer to [technologies page](doc/technologies.md).
 
