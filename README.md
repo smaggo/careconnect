@@ -1,8 +1,12 @@
-Care Connect
-==============
-This is the capstone project of Java Full Stack course, I am building an appointment system between Patient and Doctor.
+![careconnect](img/new_ok.png)
 
 Design
 =======
 
-Please refer to [document page](docs/README.md)
+Please refer to [document page](docs/README.md) and [design document](docs/design_document.md)
+
+Technologies
+=============
+
+Please refer to [technologies page](docs/technologies.md).
+
