@@ -14,7 +14,10 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.OneToOne;
-
+/**
+ * This is person class.
+ * Doctor and patient class inheriting this class.
+ */
 
 @MappedSuperclass
 public abstract class Person {

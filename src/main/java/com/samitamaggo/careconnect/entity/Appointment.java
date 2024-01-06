@@ -16,6 +16,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+/**
+ * Appointment Entity
+ */
 @Entity
 @Table(name = "appointment")
 public class Appointment {

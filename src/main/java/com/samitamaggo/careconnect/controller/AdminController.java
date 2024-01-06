@@ -19,6 +19,9 @@ import com.samitamaggo.careconnect.entity.Specialization;
 import com.samitamaggo.careconnect.service.AppointmentService;
 import com.samitamaggo.careconnect.service.DoctorService;
 
+/**
+ * Handles admin role requests and responses
+ */
 @Controller
 public class AdminController {
 

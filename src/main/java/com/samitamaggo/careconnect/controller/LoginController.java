@@ -9,6 +9,9 @@ import com.samitamaggo.careconnect.entity.User;
 
 import jakarta.servlet.http.HttpServletRequest;
 
+/**
+ * Handles Login requests and responses
+ */
 @Controller
 public class LoginController {
 

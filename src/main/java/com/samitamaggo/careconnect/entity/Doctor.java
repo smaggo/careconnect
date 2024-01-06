@@ -21,7 +21,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
+/**
+ * This is Doctor entity.
+ * This class extends Person class.
+ */
 
 @Entity
 @Table(name = "Doctor")

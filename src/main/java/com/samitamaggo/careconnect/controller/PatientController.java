@@ -13,6 +13,9 @@ import com.samitamaggo.careconnect.entity.Gender;
 import com.samitamaggo.careconnect.entity.Patient;
 import com.samitamaggo.careconnect.service.PatientService;
 
+/**
+ * Handles Patient requests and response
+ */
 @Controller
 public class PatientController {
 

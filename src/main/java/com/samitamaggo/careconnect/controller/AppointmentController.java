@@ -15,6 +15,9 @@ import com.samitamaggo.careconnect.service.DoctorService;
 import jakarta.servlet.http.HttpServletRequest;
 
 
+/**
+ * Handles appointment requests and responses
+ */
 @Controller
 public class AppointmentController {
 
@@ -24,11 +27,6 @@ public class AppointmentController {
 	@Autowired
 	private DoctorService doctorService;
 	
-//	display list of appointments
-//	@GetMapping("/user/index")
-//	public String viewHomePage(Model model) {
-//		return findPaginated(1, "date", "asc", model);		
-//	}
 	
 	@GetMapping("/appointments/register")
 	public String showRegistrationAppointment(@ModelAttribute("appointment") Appointment appointment, Model model) {

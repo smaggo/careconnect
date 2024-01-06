@@ -13,7 +13,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
+/**
+ * This is patient entity.
+ * It extending Person class.
+ */
 
 @Entity
 @Table(name =  "patient")

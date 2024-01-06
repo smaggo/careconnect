@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.samitamaggo.careconnect.entity.Doctor;
 import com.samitamaggo.careconnect.service.DoctorService;
 
+/**
+ * Handles Doctor requests and responses
+ */
 @Controller
 public class DoctorController {
 

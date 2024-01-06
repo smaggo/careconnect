@@ -9,6 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 
+/**
+ * Admin Entity extends from Person 
+ */
 @Entity
 @Table(name = "Admin")
 public class Admin extends Person {

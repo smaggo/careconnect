@@ -6,11 +6,12 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
-import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
+/**
+ * Security Configuration Class
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -19,18 +20,6 @@ public class SecurityConfig {
 	BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
-//	@Autowired
-//    private DataSource dataSource;
-
-    
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
-//    auth.jdbcAuthentication().dataSource(dataSource)
-//                .passwordEncoder(passwordEncoder())
-//                .usersByUsernameQuery("select email,password from user where email =?")
-//                .authoritiesByUsernameQuery(" select u.email, a.authority from user u, authority a where u.email = a.email and u.email=?");
-//    }
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
@@ -45,9 +34,7 @@ public class SecurityConfig {
                 		.requestMatchers("/doctors/home**").hasRole("DOCTOR")
                 		.requestMatchers("/appointments/**").hasAnyRole("DOCTOR", "PATIENT")
                         );
-                
-//                 .requestMatchers("/index").permitAll()
-                
+                                
          
                 http.formLogin(
                         form -> form
