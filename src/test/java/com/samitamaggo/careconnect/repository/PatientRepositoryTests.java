@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -26,22 +28,22 @@ public class PatientRepositoryTests {
 	@Autowired
     private PatientRepository patientRepository;
 	
-	@Test
+	@ParameterizedTest
+	@ValueSource(strings = {"patient@gmail.com"})
 	//JUnit test for findPatientByEmail
-	public void patientFound() {
+	public void patientFound(String email) {
 		
-		String email = "patient@gmail.com";
 		Patient patient = patientRepository.findPatientByEmail(email);
 		
 		assertThat(patient.getUser().getEmail()).isEqualTo(email);
 		
 	}
 	
-	@Test
+	@ParameterizedTest
+	@ValueSource(strings = {"pp@gmail.com"})
 	//JUnit test for patientNotFound
-	public void patientNotFound() {
+	public void patientNotFound(String email) {
 		
-		String email = "p@gmail.com";
 		Patient patient = patientRepository.findPatientByEmail(email);
 		
 		assertThat(patient).isNull();

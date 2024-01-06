@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -44,18 +46,18 @@ public class UserRepositoryTests {
 		assertThat(user).isEmpty();
 	}
 	
-	@Test
-	public void findUserByEmailFound() {
+	@ParameterizedTest
+	@ValueSource(strings = {"patient@gmail.com"})
+	public void findUserByEmailFound(String email) {
 	
-		String email = "patient@gmail.com";
 		User user = userRepository.findByEmail(email);
 		assertThat(user).isNotNull();
 	}
 	
-	@Test
-	public void findUserByEmailNotFound() {
+	@ParameterizedTest
+	@ValueSource(strings = {"pp@gmail.com"})
+	public void findUserByEmailNotFound(String email) {
 	
-		String email = "pp@gmail.com";
 		User user = userRepository.findByEmail(email);
 		assertThat(user).isNull();
 	}
