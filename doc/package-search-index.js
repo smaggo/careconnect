@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.samitamaggo.careconnect"},{"l":"com.samitamaggo.careconnect.config"},{"l":"com.samitamaggo.careconnect.controller"},{"l":"com.samitamaggo.careconnect.entity"},{"l":"com.samitamaggo.careconnect.repository"},{"l":"com.samitamaggo.careconnect.service"}];updateSearchResults();
