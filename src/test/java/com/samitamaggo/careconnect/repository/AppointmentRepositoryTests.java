@@ -12,7 +12,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import com.samitamaggo.careconnect.entity.Appointment;
 import com.samitamaggo.careconnect.repository.AppointmentRepository;
-
+/**
+ * Test class for AppointmentRepository
+ */
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)

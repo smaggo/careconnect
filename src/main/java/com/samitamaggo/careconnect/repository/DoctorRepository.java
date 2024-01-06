@@ -10,6 +10,10 @@ import org.springframework.stereotype.Repository;
 import com.samitamaggo.careconnect.entity.Doctor;
 import com.samitamaggo.careconnect.entity.Specialization;
 
+/**
+ * DoctorRepository extends JpaRepository with basic CRUd operations.
+ * Also include custom methods findDoctorByspecialization , findDoctorByEmail , findDoctorById
+ */
 
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {

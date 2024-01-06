@@ -8,6 +8,9 @@ import com.samitamaggo.careconnect.entity.Authority;
 import com.samitamaggo.careconnect.entity.AuthorityRole;
 import com.samitamaggo.careconnect.entity.Patient;
 import com.samitamaggo.careconnect.repository.PatientRepository;
+/**
+ * This class implements the PatientService interface and provides the actual service(s) for a Patient object. 
+*/
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -21,7 +24,9 @@ public class PatientServiceImpl implements PatientService {
 		super();
 		this.patientRepository = patientRepository;
 	}
-
+    /**
+     * Here it implementing save patient method from PatientService interface
+     */
 	@Override
 	public Patient save(Patient patient) {
 		
@@ -35,6 +40,10 @@ public class PatientServiceImpl implements PatientService {
 		return patientRepository.save(patient);
 
 	}
+	
+	/**
+	 * Here it implementing findPatientByemail from PatientService interface
+	 */
 
 	@Override
 	public Patient findPatientByEmail(String email) {

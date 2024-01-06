@@ -18,6 +18,11 @@ import com.samitamaggo.careconnect.repository.DoctorRepository;
 
 import jakarta.transaction.Transactional;
 
+/**
+ * /**
+ * This class implements the doctorService interface and provides the actual service(s) for Doctor object. 
+
+ */
 @Service
 @Transactional
 public class DoctorServiceImpl implements DoctorService {
@@ -28,7 +33,9 @@ public class DoctorServiceImpl implements DoctorService {
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
-	/** {@inheritDoc} */
+	/**  
+	 * It implementing saveDoctor() from DoctorService interface
+	 */
 	@Override
 	public void saveDoctor(Doctor doctor) {
 		Authority authority = new Authority();
@@ -40,7 +47,7 @@ public class DoctorServiceImpl implements DoctorService {
 
 		doctorRepository.save(doctor);
 	}
-	
+	/**{@inheritDoc}*/
 	@Override
 	public void deleteDoctor(Long id) {
 		doctorRepository.deleteById(id);

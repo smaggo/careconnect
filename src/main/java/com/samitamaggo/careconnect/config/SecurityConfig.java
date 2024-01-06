@@ -11,7 +11,9 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * Security Configuration Class
- */
+ * It will load User information during authentication and set request authorization (what endpoints - pages a User has access to once authenticated)
+*/
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {

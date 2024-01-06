@@ -11,7 +11,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import com.samitamaggo.careconnect.entity.Doctor;
 import com.samitamaggo.careconnect.repository.DoctorRepository;
-
+/**
+ * This is test class DoctorService
+ */
 @ExtendWith(MockitoExtension.class)
 public class DoctorServiceTest {
 

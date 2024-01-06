@@ -16,7 +16,10 @@ import com.samitamaggo.careconnect.entity.Authority;
 import com.samitamaggo.careconnect.entity.AuthorityRole;
 import com.samitamaggo.careconnect.entity.User;
 import com.samitamaggo.careconnect.repository.UserRepository;
+/**
+ * This class implements the UserService interface and provides the actual service(s) for a User object. 
 
+ */
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -30,7 +33,9 @@ public class UserServiceImpl implements UserService{
 		super();
 		this.userRepository = userRepository;
 	}
-
+ /**
+  * this save method saving the User and Setting authority to Role_Patient
+  */
 	@Override
 	public User save(User user) {
 		Authority authority = new Authority();
@@ -43,7 +48,12 @@ public class UserServiceImpl implements UserService{
 		return userRepository.save(user);
 	}
 	
-
+     /**
+      * Uses the userRepository to find the User by email.
+      * This service will return the user details in the UserDetails object.
+      *If the user object is null - (email was not found) it throws a UserNameNotFoundException.
+       */
+      
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	

@@ -20,7 +20,9 @@ import com.samitamaggo.careconnect.entity.User;
 import com.samitamaggo.careconnect.entity.Authority;
 import com.samitamaggo.careconnect.entity.AuthorityRole;
 import com.samitamaggo.careconnect.repository.PatientRepository;
-
+/**
+ * Test class for PatientRepository
+ */
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class PatientRepositoryTests {

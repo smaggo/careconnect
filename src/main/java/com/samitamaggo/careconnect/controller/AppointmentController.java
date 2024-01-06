@@ -26,7 +26,11 @@ public class AppointmentController {
 	
 	@Autowired
 	private DoctorService doctorService;
-	
+	/**
+	 * <p>showRegistrationAppointment.</p>
+	 * @param model,Appointment
+	 * @return String object.
+	 */
 	
 	@GetMapping("/appointments/register")
 	public String showRegistrationAppointment(@ModelAttribute("appointment") Appointment appointment, Model model) {
@@ -35,28 +39,40 @@ public class AppointmentController {
 		model.addAttribute("specializations", appointmentService.getAllSpecialization());
 		return "appointments/appointment-create";
 	}
-	
+	/**
+	 * <p>saveAppointment.</p>
+	 * @param model,appointment
+	 * @return String object.
+	 */
 	
 	@PostMapping("/appointments")
 	public String saveAppointment(@ModelAttribute("appointment") Appointment appointment, Model model) {
-		// save appointment to database
+		
 		appointmentService.saveAppointment(appointment);
 		return "redirect:/patients/home";
 	}
-	
+	/**
+	 * <p>showFormForUpdate.</p>
+	 * @param model,id
+	 * @return String object.
+	 */
 	
 	@GetMapping("/appointments/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
 		
-		// get appointment from the service
+		
 		Appointment appointment = appointmentService.getAppointment(id);
 		
-		// set appointment as a model attribute to pre-populate the form
 		model.addAttribute("appointment", appointment);
 		model.addAttribute("doctors", doctorService.getAll());
 
 		return "/appointments/appointment-update";
 	}
+	/**
+	 * <p>acceptAppointment.</p>
+	 * @param model,id
+	 * @return String object.
+	 */
 	
 	@GetMapping("/appointments/accept/{id}")
 	public String acceptAppointment(@PathVariable ( value = "id") long id, Model model) {
@@ -67,7 +83,11 @@ public class AppointmentController {
 		
 		return "redirect:/doctors/home";
 	}
-	
+	/**
+	 * <p>rejectAppointment.</p>
+	 * @param model,id
+	 * @return String object.
+	 */
 	@GetMapping("/appointments/reject/{id}")
 	public String rejectAppointment(@PathVariable ( value = "id") long id, Model model) {
 		Appointment appointment = appointmentService.getAppointment(id);
@@ -77,13 +97,23 @@ public class AppointmentController {
 		
 		return "redirect:/doctors/home";
 	}
+	/**
+	 * <p>deleteappointment.</p>
+	 * @param id
+	 * @return String object.
+	 */
 	
 	@GetMapping("/appointments/deleteAppointment/{id}")
 	public String deleteAppointment(@PathVariable (value = "id") long id) {
-		// call delete appointment method 
+		
 		appointmentService.cancelAppointment(id);
 		return "redirect:/patients/home";
 	}
+	/**
+	 * <p>getAppointmentDetail.</p>
+	 * @param model,Appointment,HttpservletRequest,id
+	 * @return String object.
+	 */
 	
 	@GetMapping("/appointments/{id}/detail")
 	public String getAppointmentDetail(@ModelAttribute("appointment") Appointment appointment,

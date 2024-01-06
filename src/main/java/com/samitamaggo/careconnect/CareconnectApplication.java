@@ -9,6 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CareconnectApplication {
 
+	/**
+	 * This is main method
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(CareconnectApplication.class, args);
 	}

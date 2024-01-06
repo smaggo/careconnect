@@ -8,7 +8,11 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class HomeController {
 	
-	
+	/**
+	 * <p>rejectAppointment.</p>
+	*@return String
+	**/
+	 
 	public String viewHomePage() {
 		return "home";
 	}

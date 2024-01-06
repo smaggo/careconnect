@@ -6,21 +6,28 @@ import java.util.Map;
 import com.samitamaggo.careconnect.entity.Doctor;
 import com.samitamaggo.careconnect.entity.Specialization;
 
+/**
+ * This interface provide services to Doctor object
+ */
+
 public interface DoctorService {
 
 	/**
 	 * <p>saveDoctor.</p>
 	 *
-	 * @param doctor a {@link mum.waa.fd.app.domain.Doctor} object.
+	 * @param doctor a Doctor object.
 	 */
 	public void saveDoctor(Doctor doctor);
-	
+	/**
+	 * <p>deleteDoctor.</p>
+	 * @param id
+	 */
 	public void deleteDoctor(Long id);
 
 	/**
 	 * <p>updateDoctor.</p>
 	 *
-	 * @param doctor a {@link mum.waa.fd.app.domain.Doctor} object.
+	 * @param doctor a Doctor object.
 	 */
 	public void updateDoctor(Doctor doctor);
 
@@ -42,7 +49,7 @@ public interface DoctorService {
 	/**
 	 * <p>findDoctorBySpecialization.</p>
 	 *
-	 * @param specialization a {@link mum.waa.fd.app.domain.Specialization} object.
+	 * @param specialization a Specialization object.
 	 * @return a {@link java.util.Map} object.
 	 */
 	public Map<Long, String> findDoctorBySpecialization(Specialization specialization);

@@ -36,6 +36,12 @@ public class AdminController {
 		this.doctorService = doctorService;
 		this.appointmentService = appointmentService;
 	}
+	
+	/**
+	 * <p>adminDashboard.</p>
+	 * @param model
+	 * @return
+	 */
 
 	@GetMapping("/admin")
 	public String adminDashboard(Model model) {
@@ -46,9 +52,9 @@ public class AdminController {
 	/**
 	 * <p>addDoctorAcount.</p>
 	 *
-	 * @param newDoctor a {@link mum.waa.fd.app.domain.Doctor} object.
-	 * @param model a {@link org.springframework.ui.Model} object.
-	 * @return a {@link java.lang.String} object.
+	 * @param newDoctor a {Doctor} object.
+	 * @param model a {Model} object.
+	 * @return a {String} object.
 	 */
 	@GetMapping("/admin/add-doctor")
 	public String showAddDoctorPage(@ModelAttribute("doctor") Doctor doctor, Model model) {
@@ -60,10 +66,10 @@ public class AdminController {
 	/**
 	 * <p>saveDoctor.</p>
 	 *
-	 * @param newDoctor a {@link mum.waa.fd.app.domain.Doctor} object.
-	 * @param bindingResult a {@link org.springframework.validation.BindingResult} object.
-	 * @param redirectAttributes a {@link org.springframework.web.servlet.mvc.support.RedirectAttributes} object.
-	 * @return a {@link java.lang.String} object.
+	 * @param newDoctor a {Doctor} object.
+	 * @param bindingResult a {BindingResult} object.
+	 * @param redirectAttributes a {RedirectAttributes} object.
+	 * @return String object.
 	 */
 	@PostMapping("/admin/save-doctor")
 	public String saveDoctor(@Valid @ModelAttribute("doctor") Doctor doctor, BindingResult bindingResult,
@@ -89,8 +95,8 @@ public class AdminController {
 	 * <p>modifyAdminAccount.</p>
 	 *
 	 * @param doctorId a int.
-	 * @param model a {@link org.springframework.ui.Model} object.
-	 * @return a {@link java.lang.String} object.
+	 * @param model a {Model} object.
+	 * @return String object.
 	 */
 	@GetMapping("/admin/doctor/{doctorId}")
 	public String modifyAdminAccount(@PathVariable Long doctorId, Model model) {

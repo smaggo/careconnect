@@ -12,6 +12,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.samitamaggo.careconnect.entity.Appointment;
 import com.samitamaggo.careconnect.repository.AppointmentRepository;
 
+/**
+ * This is Test class for AppointmentService
+ */
 @ExtendWith(MockitoExtension.class)
 public class AppointmentServiceTest {
 
@@ -21,6 +24,9 @@ public class AppointmentServiceTest {
 	@InjectMocks
     private AppointmentServiceImpl appointmentServiceImpl;
 
+	/**
+	 * testing getAppointmentFound()
+	 */
 	@Test
     void getAppointmentFound() {
 		
@@ -30,6 +36,9 @@ public class AppointmentServiceTest {
 		assertThat(app).isNotNull();
        
     }
+	/**
+	 * testing getAppointmentNotFound()
+	 */
 	
 	@Test
     void getAppointmentNotFound() {

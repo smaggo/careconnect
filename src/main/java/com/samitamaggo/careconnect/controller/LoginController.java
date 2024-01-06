@@ -14,7 +14,11 @@ import jakarta.servlet.http.HttpServletRequest;
  */
 @Controller
 public class LoginController {
-
+	/**
+	 * <p>showLoginForm.</p>
+	 * @param User,HttpServletRequest
+	 * @return String object.
+	 */
 	@GetMapping({"/", "/home"})
 	public String showLoginForm(@ModelAttribute("user") User user, HttpServletRequest request) {
 		String path = redirectByRole(request);
@@ -25,6 +29,11 @@ public class LoginController {
 
 		return path;
 	}
+	/**
+	 * <p>loginSuccess.</p>
+	 * @param HttpservletRequest
+	 * @return String object.
+	 */
 	
 	@GetMapping("/login-success")
 	public String loginSuccess(HttpServletRequest request) {
@@ -52,20 +61,33 @@ public class LoginController {
 
 		return "";
 	}
+		/**
+		 * <p>loginFailed.</p>
+		 * @param model,user
+		 * @return String object.
+		 */
 		
 		@GetMapping("/login-failed")
 		public String loginFailed(@ModelAttribute("user") User user, Model model) {
 			model.addAttribute("fail", true);
 			return "home";
 		}
-		
+		/**
+		 * <p>logout.</p>
+		 * @param model
+		 * @return String object.
+		 */
 	
 		@GetMapping("/logout")
 		public String logout(Model model) {
 			return "redirect:/home";
 		}
 
-		
+		/**
+		 * <p>error.</p>
+		 * @param model
+		 * @return String object.
+		 */
 		@GetMapping("/403")
 		public String error(Model model) {
 			return "403";

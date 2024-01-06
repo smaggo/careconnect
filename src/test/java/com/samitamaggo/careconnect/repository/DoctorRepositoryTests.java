@@ -22,7 +22,9 @@ import com.samitamaggo.careconnect.entity.Patient;
 import com.samitamaggo.careconnect.entity.Specialization;
 import com.samitamaggo.careconnect.entity.User;
 import com.samitamaggo.careconnect.repository.DoctorRepository;
-
+/**
+ * Test class for DoctorRepository
+ */
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class DoctorRepositoryTests {

@@ -20,7 +20,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-
+/**
+ * This is User entity.
+ */
 
 @Entity
 @Table(name = "user")

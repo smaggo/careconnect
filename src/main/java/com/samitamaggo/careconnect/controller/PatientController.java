@@ -25,12 +25,22 @@ public class PatientController {
 		super();
 		this.patientService = patientService;
 	}
+	/**
+	 * <p>showRegistrationForm.</p>
+	 * @param model,patient
+	 * @return String object.
+	 */
 	
 	@GetMapping("/patients/register")
 	public String showRegistrationForm(@ModelAttribute("patient") Patient patient, Model model) {
 		model.addAttribute("genderEnums", Gender.values());
 		return "patients/patient-register";
 	}
+	/**
+	 * <p>registerPatient.</p>
+	 * @param patient,redirectattributes
+	 * @return String object.
+	 */
 	
 	@PostMapping("/patients")
 	public String registerPatient(@ModelAttribute("patient") Patient patient, RedirectAttributes redirectAttributes) {
@@ -39,11 +49,20 @@ public class PatientController {
 		redirectAttributes.addFlashAttribute("patient", patient);
 		return "redirect:/patients/successful";
 			}
-	
+	/**
+	 * <p>showRegistrationSuccessful.</p>
+	 * @param patient
+	 * @return String object.
+	 */
 	@GetMapping("/patients/successful")
 	public String showRegistrationSuccessful(@ModelAttribute("patient") Patient patient) {
 		return "patients/patient-register-successful";
 	}
+	/**
+	 * <p>showPatientHome.</p>
+	 * @param patient,model,principal
+	 * @return String object.
+	 */
 	
 	@GetMapping("/patients/home")
 	public String showPatientHome(@ModelAttribute("patient") Patient patient, Model model, Principal principal) {

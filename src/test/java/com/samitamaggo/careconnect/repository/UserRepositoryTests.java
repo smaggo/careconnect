@@ -14,7 +14,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import com.samitamaggo.careconnect.entity.User;
 import com.samitamaggo.careconnect.repository.UserRepository;
-
+/**
+ * Test class for UserRepository
+ */
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)

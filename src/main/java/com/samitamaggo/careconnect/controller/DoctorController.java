@@ -22,6 +22,11 @@ public class DoctorController {
 		super();
 		this.doctorService = doctorService;
 	}
+	/**
+	 * <p>showDoctorHome.</p>
+	 * @param model,Doctor,Principal
+	 * @return String object.
+	 */
 	
 	@GetMapping("/doctors/home")
 	public String showDoctorHome(@ModelAttribute("doctor") Doctor doctor, Model model, Principal principal) {
@@ -30,6 +35,11 @@ public class DoctorController {
 		model.addAttribute("doctor", foundDoctor);
 		return "doctors/doctor-home";
 	}
+	/**
+	 * <p>deleteDoctor.</p>
+	 * @param id
+	 * @return String object.
+	 */
 	
 	@GetMapping("/doctors/delete/{id}")
 	public String deleteDoctor(@PathVariable (value = "id") long id) {

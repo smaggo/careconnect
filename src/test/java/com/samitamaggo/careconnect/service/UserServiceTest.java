@@ -11,7 +11,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import com.samitamaggo.careconnect.entity.User;
 import com.samitamaggo.careconnect.repository.UserRepository;
-
+/**
+ * This is test Class for Userservice
+ */
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
 

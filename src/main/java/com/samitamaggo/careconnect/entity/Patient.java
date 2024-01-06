@@ -15,7 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 /**
  * This is patient entity.
- * It extending Person class.
+ * It is extending from Person class.
  */
 
 @Entity

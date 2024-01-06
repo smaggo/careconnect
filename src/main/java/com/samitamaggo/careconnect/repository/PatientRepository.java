@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.samitamaggo.careconnect.entity.Patient;
 
+/**
+ * PatientRepository extends JpaRepository with basic CRUd operations.
+ * Also include custom method findPatientByEmail
+ * @param email
+ */
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long>{
 
