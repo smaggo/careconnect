@@ -14,6 +14,10 @@ Purpose
 
 The purpose of the project is to understand the web application architecture. Here we used spring framework, as we learnt it in the theoratical study. As it is only demonstration, it is not fully featured website for patient. 
 
+Design
+======
+Please refer design document ![here](doc/design/design_doc.pdf)
+
 Usage scenarios
 ===============
 
