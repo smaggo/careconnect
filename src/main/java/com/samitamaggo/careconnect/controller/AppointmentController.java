@@ -68,6 +68,24 @@ public class AppointmentController {
 
 		return "/appointments/appointment-update";
 	}
+	
+	/**
+	 * <p>cancelAppointment.</p>
+	 * @param model,id
+	 * @return String object.
+	 */
+	
+	@GetMapping("/appointments/cancel/{id}")
+	public String cancelAppointment(@PathVariable ( value = "id") long id, Model model) {
+		Appointment appointment = appointmentService.getAppointment(id);
+
+		appointment.setStatus(AppointmentStatus.CANCELED);
+		appointmentService.updateAppointment(appointment);
+		
+		return "redirect:/patients/home";
+	}
+	
+	
 	/**
 	 * <p>acceptAppointment.</p>
 	 * @param model,id

@@ -81,8 +81,8 @@
 					<td th:text="${appointment.patient.firstName} + ' ' + ${appointment.patient.lastName}"></td>
 										<td th:text="${appointment.status}"></td>
 					<td> 
-						<a th:if="${appointment.status.name() != 'ACCEPTED'}" th:href="@{/appointments/accept/{id}(id=${appointment.appointmentId})}" class="btn btn-primary">Accept</a>
-					    <a th:if="${appointment.status.name() != 'REJECTED'}" th:href="@{/appointments/reject/{id}(id=${appointment.appointmentId})}" class="btn btn-danger">Reject</a>
+						<a th:if="${appointment.status.name() != 'ACCEPTED' and appointment.status.name() != 'CANCELED'}" th:href="@{/appointments/accept/{id}(id=${appointment.appointmentId})}" class="btn btn-primary">Accept</a>
+					    <a th:if="${appointment.status.name() != 'REJECTED' and appointment.status.name() != 'CANCELED'}" th:href="@{/appointments/reject/{id}(id=${appointment.appointmentId})}" class="btn btn-danger">Reject</a>
 					</td> 
 				</tr>
 			</tbody>

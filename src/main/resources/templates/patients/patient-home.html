@@ -76,6 +76,10 @@
 						
 							 Doctor
 					</th>
+					<th>
+						
+							 Status
+					</th>
 					
 					<th> Actions </th>
 				</tr>
@@ -86,10 +90,13 @@
 					<td th:text="${appointment.time}"></td>
 					<td th:text="${appointment.description}"></td>
 					<td th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName} + ' - ' + ${appointment.doctor.specialization}"></td>
-					<td> <a th:href="@{/appointments/showFormForUpdate/{id}(id=${appointment.appointmentId})}" class="btn btn-primary">Update</a>
-					<a class="btn btn-danger" disabled>Cancel</a>
+										<td th:text="${appointment.status}"></td>
+					<td> <a th:if="${appointment.status.name() != 'CANCELED'}" th:href="@{/appointments/showFormForUpdate/{id}(id=${appointment.appointmentId})}" class="btn btn-primary">Update</a>
 					    <!--<a th:href="@{/appointments/deleteAppointment/{id}(id=${appointment.appointmentId})}" class="btn btn-danger" disabled>Cancel</a> -->
+										    <a th:if="${appointment.status.name() != 'CANCELED'}" th:href="@{/appointments/cancel/{id}(id=${appointment.appointmentId})}" class="btn btn-danger">Cancel</a>
+
 					</td>
+					
 				</tr>
 			</tbody>
 		</table>
