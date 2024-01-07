@@ -480,72 +480,7 @@
        d="M 138.57143,610.9336 687.14287,609.505"
        id="path4620"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="413.14285"
-       y="586.64783"
-       id="text4622"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4624"
-         x="413.14285"
-         y="586.64783">&lt;&lt;email&gt;&gt;</tspan></text>
-    <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.48605338;stroke-opacity:1"
-       ry="44.54269"
-       rx="121.68554"
-       cy="718.17682"
-       cx="484.67737"
-       id="ellipse4647" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4649"
-       y="723.89093"
-       x="376.6774"
-       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="723.89093"
-         x="376.6774"
-         id="tspan4651"
-         sodipodi:role="line">doctor login page</tspan></text>
-    <polygon
-       transform="matrix(-4,0,0,-4,1498.9631,1315.3196)"
-       id="polygon4653"
-       style="fill:#000000;stroke:none"
-       points="285,150 290,147.5 290,152.5 " />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 112.85715,640.9336 230,74.2857"
-       id="path4655"
-       inkscape:connector-curvature="0" />
-    <ellipse
-       id="ellipse4672"
-       cx="484.67737"
-       cy="878.17682"
-       rx="121.68554"
-       ry="44.54269"
-       style="fill:none;stroke:#000000;stroke-width:0.48605338;stroke-opacity:1" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="374.57144"
-       y="886.93359"
-       id="text4674"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4676"
-         x="374.57144"
-         y="886.93359">doctor dashboard</tspan></text>
-    <polygon
-       transform="matrix(0,-4,4,0,-114.8571,1972.9336)"
-       id="polygon4653-8"
-       style="fill:#000000;stroke:none"
-       points="290,147.5 290,152.5 285,150 " />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 485.71429,819.505 0,-57.1428"
-       id="path4693"
-       inkscape:connector-curvature="0" />
+
+    
   </g>
 </svg>
