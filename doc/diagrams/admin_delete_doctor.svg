@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="patient_appointment.svg">
+   sodipodi:docname="doctor_confirms_appointment.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -33,8 +33,8 @@
      showgrid="false"
      inkscape:window-width="1239"
      inkscape:window-height="755"
-     inkscape:window-x="1345"
-     inkscape:window-y="21"
+     inkscape:window-x="1043"
+     inkscape:window-y="32"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -224,31 +224,10 @@
          sodipodi:role="line"
          id="tspan4974"
          x="374.10596"
-         y="387.31952">appointment form</tspan></text>
+         y="387.31952">     delete doctor</tspan></text>
+
+ 
     
-   
-    <ellipse
-       id="path3336-2-0-7"
-       cx="804.67737"
-       cy="446.74811"
-       rx="121.68554"
-       ry="44.54269"
-       style="fill:none;stroke:#000000;stroke-width:0.48605338;stroke-opacity:1" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="723.82025"
-       y="434.4624"
-       id="text5010"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5012"
-         x="723.82025"
-         y="434.4624">     create</tspan><tspan
-         sodipodi:role="line"
-         x="723.82025"
-         y="465.7124"
-         id="tspan5498">appointment</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -259,7 +238,7 @@
          sodipodi:role="line"
          id="tspan5016"
          x="32.963104"
-         y="275.03381">patient</tspan></text>
+         y="275.03381">admin</tspan></text>
     <polygon
        points="290,147.5 290,152.5 285,150 "
        style="fill:#000000;stroke:none"
@@ -280,69 +259,19 @@
        d="m 486.10595,315.89097 0,-72.85714"
        id="path5861"
        inkscape:connector-curvature="0" />
-    <polygon
-       points="290,152.5 285,150 290,147.5 "
-       style="fill:#000000;stroke:none"
-       id="polygon4130-3-6-2-9"
-       transform="matrix(-4,0,0,-4,1840.3917,1022.4624)" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12, 12;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 686.10595,421.60526 600.39167,395.89097"
-       id="path5878"
-       inkscape:connector-curvature="0" />
-   
+
     <rect
-       style="fill:none;stroke:#000000;stroke-width:0.93495435;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:1.09750175;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4386"
-       width="703.13123"
-       height="640.50183"
-       x="244.83049"
-       y="95.131546" />
- 
+       width="702.96869"
+       height="882.77588"
+       x="244.91176"
+       y="95.212822" />
     
- 
-   
-   
+  
     
    
- 
     
-    <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.48605338;stroke-opacity:1"
-       ry="44.54269"
-       rx="121.68554"
-       cy="244.74811"
-       cx="804.67737"
-       id="ellipse5511" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="729.47229"
-       y="238.30106"
-       id="text5513"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5515"
-         x="729.47229"
-         y="238.30106">verify and/or</tspan><tspan
-         sodipodi:role="line"
-         x="729.47229"
-         y="269.55106"
-         id="tspan5517">select doctor</tspan></text>
-    <polygon
-       transform="matrix(0,-4,4,0,214.9631,1539.891)"
-       id="polygon5529"
-       style="fill:#000000;stroke:none"
-       points="290,147.5 290,152.5 285,150 " />
-    <path
-       inkscape:connector-curvature="0"
-       id="path5531"
-       d="m 814.28573,310.9336 0,72.8571"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12, 12;stroke-dashoffset:0;stroke-opacity:1" />
-    <polygon
-       points="290,152.5 285,150 290,147.5 "
-       style="fill:#000000;stroke:none"
-       id="polygon5548"
-       transform="matrix(0,4,-4,0,1414.9631,-848.109)" />
+    
   </g>
 </svg>
