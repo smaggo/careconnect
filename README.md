@@ -1,12 +1,14 @@
-![careconnect](static/img/new_ok.png)
+![careconnect](src/main/resources/static/img/careconnect.png)
 
 Design
 =======
-
-Please refer to [document page](doc/README.md) and [design document](doc/design_document.md)
+![patient registration](doc/diagrams/patient_registration.svg)
+![doctor registration](doc/diagrams/doctor_registration.svg)
+![patient asks for appointment](doc/diagrams/patient_appointment.svg)
+![doctor updates the appointment](doc/diagrams/doctor_updates_appointment.svg)
 
 Technologies
 =============
 
-Please refer to [technologies page](doc/technologies.md).
+
 
