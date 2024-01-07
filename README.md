@@ -5,16 +5,6 @@ Care Connect
 
 Care Connect is a portal for a clinic. It helps the patients manage their appointments. It has dashboard so that patient can create their appointments online and get notified about that. It also helps the doctors to manage their appointments.
 
-Table of contents
-==================
-
-- [Introduction](#introduction)
-- [Usage scenarios](#usage-scenarios)
-	- [Patient registration](#patient-registration)
-	- [Registration of doctor by admin](#registration-of-doctor-by_admin)
-	- [Patient appointment](#patient-appointment)
-	- [Doctor updates appointment](#doctor-updates-appointment)
-
 Introduction
 =============
 This website helps the patient to communicate with the hospital to create an appointment. Doctors can accept the appointment. And patients can view the prescriptions and history.
@@ -71,6 +61,3 @@ Technologies
 - Java
 - Javascript
 - CSS
-
-
-
