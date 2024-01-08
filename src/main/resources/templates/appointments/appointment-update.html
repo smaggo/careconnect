@@ -59,7 +59,7 @@
 			<div class= "form-group">
 					<label class="control-label" for="doctor">Select Doctor</label>
 				<div th:each="doctor : ${doctors}">
-  <input name="doctor" type="radio" th:value="${doctor.doctorId}" th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName} + ' - ' + ${appointment.doctor.specialization}" required autofocus="autofocus"/>
+  <input name="doctor" type="radio" th:value="${doctor.doctorId}" th:text="${doctor.firstName} + ' ' + ${doctor.lastName} + ' - ' + ${doctor.specialization}" required autofocus="autofocus"/>
 				</div>
 </div>
 				

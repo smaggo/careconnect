@@ -1,6 +1,7 @@
 package com.samitamaggo.careconnect.controller;
 
 import java.security.Principal;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
@@ -64,7 +65,7 @@ public class PatientController {
 			return "redirect:/patients/successful";
 		}
 
-		catch (final DuplicateKeyException e) {
+		catch (Exception SQLIntegrityConstraintViolationException) {
 			return "redirect:/home?alreadyexists";
 
 		}
