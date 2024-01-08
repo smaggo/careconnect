@@ -29,9 +29,9 @@ public class Authority {
 	@Enumerated(EnumType.STRING)
 	private AuthorityRole authorityRole;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, targetEntity = User.class)
-	@JoinColumn(name = "User_id")
-    private User user;
+//	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, targetEntity = User.class)
+//	@JoinColumn(name = "User_id")
+//    private User user;
 	/**
 	 * <p>Constructor for Authority.</p>
 	 */

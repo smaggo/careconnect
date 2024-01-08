@@ -95,7 +95,13 @@
 					<br>
 					<div class="alert alert-info">Invalid email/password, please login again !</div>
 				</div>
+				<!-- already exists message -->
+				<div th:if="${param.alreadyexists}">
+					<br>
+					<div class="alert alert-info">User already exists, please use another email address !</div>
+				</div>
 				<br>
+				
 				
 	<div class="container">
 		<h1>Welcome to CareConnect Portal</h1>

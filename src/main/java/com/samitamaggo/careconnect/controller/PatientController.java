@@ -2,6 +2,7 @@ package com.samitamaggo.careconnect.controller;
 
 import java.security.Principal;
 
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,32 +26,56 @@ public class PatientController {
 		super();
 		this.patientService = patientService;
 	}
+
 	/**
-	 * <p>showRegistrationForm.</p>
+	 * <p>
+	 * showRegistrationForm.
+	 * </p>
+	 * 
 	 * @param model,patient
 	 * @return String object.
 	 */
-	
+
 	@GetMapping("/patients/register")
 	public String showRegistrationForm(@ModelAttribute("patient") Patient patient, Model model) {
 		model.addAttribute("genderEnums", Gender.values());
 		return "patients/patient-register";
 	}
+
 	/**
-	 * <p>registerPatient.</p>
+	 * <p>
+	 * registerPatient.
+	 * </p>
+	 * 
 	 * @param patient,redirectattributes
 	 * @return String object.
 	 */
-	
+
 	@PostMapping("/patients")
 	public String registerPatient(@ModelAttribute("patient") Patient patient, RedirectAttributes redirectAttributes) {
-		patientService.save(patient);
-		
-		redirectAttributes.addFlashAttribute("patient", patient);
-		return "redirect:/patients/successful";
-			}
+		Patient pat = patientService.findPatientByEmail(patient.getUser().getEmail());
+		if (pat != null) {
+			return "redirect:/home?alreadyexists";
+		}
+
+		try {
+			patientService.save(patient);
+			redirectAttributes.addFlashAttribute("patient", patient);
+			return "redirect:/patients/successful";
+		}
+
+		catch (final DuplicateKeyException e) {
+			return "redirect:/home?alreadyexists";
+
+		}
+
+	}
+
 	/**
-	 * <p>showRegistrationSuccessful.</p>
+	 * <p>
+	 * showRegistrationSuccessful.
+	 * </p>
+	 * 
 	 * @param patient
 	 * @return String object.
 	 */
@@ -58,12 +83,16 @@ public class PatientController {
 	public String showRegistrationSuccessful(@ModelAttribute("patient") Patient patient) {
 		return "patients/patient-register-successful";
 	}
+
 	/**
-	 * <p>showPatientHome.</p>
+	 * <p>
+	 * showPatientHome.
+	 * </p>
+	 * 
 	 * @param patient,model,principal
 	 * @return String object.
 	 */
-	
+
 	@GetMapping("/patients/home")
 	public String showPatientHome(@ModelAttribute("patient") Patient patient, Model model, Principal principal) {
 		Patient foundPatient = patientService.findPatientByEmail(principal.getName());

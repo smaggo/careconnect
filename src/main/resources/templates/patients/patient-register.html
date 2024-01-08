@@ -45,6 +45,12 @@
 					<div class="alert alert-info">You've successfully registered
 						to our CareConnect !</div>
 				</div>
+				
+				<!-- already exists message -->
+				<div th:if="${param.alreadyexists}">
+					<br>
+					<div class="alert alert-info">User already exists, please register again with different email address</div>
+				</div>
 
 				<h1>Registration</h1>
 
