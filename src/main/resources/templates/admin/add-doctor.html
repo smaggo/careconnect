@@ -54,6 +54,12 @@
 						to our CareConnect !</div>
 				</div>
 
+<!-- already exists message -->
+				<div th:if="${param.alreadyexists}">
+					<br>
+					<div class="alert alert-info">Doctor already exists, please use another email address !</div>
+				</div>
+				
 				<h2>Add Doctor</h2>
 
 				<form th:action="@{/admin/save-doctor}" method="post" th:object="${doctor}">
@@ -121,6 +127,7 @@
 						<!--<span>Already registered? <a href="/patients/register" th:href="@{/login}">Login
 								here</a></span>-->
 					</div>
+					
 				</form>
 			</div>
 		</div>

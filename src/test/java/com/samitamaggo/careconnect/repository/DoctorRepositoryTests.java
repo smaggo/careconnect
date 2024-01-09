@@ -36,7 +36,7 @@ public class DoctorRepositoryTests {
 	//JUnit test for findDoctorBySpecialization
 	public void docSpecFound() {
 		
-		Specialization spec = Specialization.CARDIOLOGIST;
+		Specialization spec = Specialization.ENT;
 		List<Doctor> doctors = docRepository.findDoctorBySpecialization(spec);
 		
 		assertThat(doctors.size()).isGreaterThan(0);
@@ -47,7 +47,7 @@ public class DoctorRepositoryTests {
 	//JUnit test for findDoctorBySpecialization
 	public void docSpecNotFound() {
 		
-		Specialization spec = Specialization.HEPATOLOGIST;
+		Specialization spec = Specialization.CARDIOLOGIST;
 		List<Doctor> doctors = docRepository.findDoctorBySpecialization(spec);
 		
 		assertThat(doctors).isEmpty();
@@ -78,7 +78,7 @@ public class DoctorRepositoryTests {
 	}
 	
 	@ParameterizedTest
-	@ValueSource(strings = {"john@gmail.com"})
+	@ValueSource(strings = {"jim@gmail.com"})
 	//JUnit test for findDoctorByEmail
 	public void docEmailFound(String email) {
 		Doctor doctor = docRepository.findDoctorByEmail(email);

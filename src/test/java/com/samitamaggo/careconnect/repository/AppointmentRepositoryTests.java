@@ -33,7 +33,7 @@ public class AppointmentRepositoryTests {
 	@Test
 	public void findAppointmentByIdFound() {
 	
-		Long appId = (long) 8;
+		Long appId = (long) 1;
 		Optional<Appointment> app = appRepository.findById(appId);
 		assertThat(app).isNotEmpty();
 	}
@@ -41,7 +41,7 @@ public class AppointmentRepositoryTests {
 	@Test
 	public void findAppointmentByIdNotFound() {
 	
-		Long appId = (long) 1;
+		Long appId = (long) 100;
 		Optional<Appointment> app = appRepository.findById(appId);
 		assertThat(app).isEmpty();
 	}

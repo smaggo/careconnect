@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.samitamaggo.careconnect.entity.Doctor;
 import com.samitamaggo.careconnect.entity.Gender;
+import com.samitamaggo.careconnect.entity.Patient;
 import com.samitamaggo.careconnect.entity.Specialization;
 import com.samitamaggo.careconnect.service.AppointmentService;
 import com.samitamaggo.careconnect.service.DoctorService;
@@ -74,21 +75,25 @@ public class AdminController {
 	@PostMapping("/admin/save-doctor")
 	public String saveDoctor(@Valid @ModelAttribute("doctor") Doctor doctor, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
-		if (!doctor.getUser().getPassword().isEmpty()
-				&& !doctor.getUser().getPassword().equals(doctor.getUser().getConfirmPassword())) {
-			ObjectError err = new ObjectError("passwordMatch", "Password and Confirm Password do not match");
+		
+		Doctor doc = doctorService.findDoctorByEmail(doctor.getUser().getEmail());
 
-			bindingResult.addError(err);
+		if (doc != null) {
+			return "redirect:/admin/add-doctor?alreadyexists";
 		}
 
-		if (bindingResult.hasErrors()) {
-			return "admin/add-doctor";
+		try {
+			doctorService.saveDoctor(doctor);
+			redirectAttributes.addAttribute("specEnums", Specialization.values());
+			redirectAttributes.addAttribute("genderEnums", Gender.values());
+			redirectAttributes.addFlashAttribute("message", "Doctor successfully added!");
+			return "redirect:/admin";
 		}
 
-		doctorService.saveDoctor(doctor);
+		catch (Exception SQLIntegrityConstraintViolationException) {
+			return "redirect:/admin/add-doctor?alreadyexists";
 
-		redirectAttributes.addFlashAttribute("message", "Doctor successfully added!");
-		return "redirect:/admin";
+		}
 	}
 
 	/**

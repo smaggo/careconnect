@@ -30,7 +30,7 @@ public class AppointmentServiceTest {
 	@Test
     void getAppointmentFound() {
 		
-		Long appId = (long) 8;
+		Long appId = (long) 1;
 		Optional<Appointment> app = appointmentRepository.findById(appId);
 		
 		assertThat(app).isNotNull();

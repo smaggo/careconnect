@@ -31,7 +31,7 @@ public class PatientRepositoryTests {
     private PatientRepository patientRepository;
 	
 	@ParameterizedTest
-	@ValueSource(strings = {"patient@gmail.com"})
+	@ValueSource(strings = {"gabriel@gmail.com"})
 	//JUnit test for findPatientByEmail
 	public void patientFound(String email) {
 		

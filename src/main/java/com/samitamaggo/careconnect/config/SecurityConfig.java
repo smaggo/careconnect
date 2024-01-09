@@ -61,8 +61,8 @@ public class SecurityConfig {
 
                 http.sessionManagement(session -> session
                 		.invalidSessionUrl("/home?expired")
-//                        .maximumSessions(1)
-//                        .expiredUrl("/home?expired")
+                    
+                     
                         );
                 
                 return http.build();

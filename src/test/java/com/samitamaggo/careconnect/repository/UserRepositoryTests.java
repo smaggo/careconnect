@@ -49,7 +49,7 @@ public class UserRepositoryTests {
 	}
 	
 	@ParameterizedTest
-	@ValueSource(strings = {"patient@gmail.com"})
+	@ValueSource(strings = {"gabriel@gmail.com"})
 	public void findUserByEmailFound(String email) {
 	
 		User user = userRepository.findByEmail(email);
@@ -57,7 +57,7 @@ public class UserRepositoryTests {
 	}
 	
 	@ParameterizedTest
-	@ValueSource(strings = {"pp@gmail.com"})
+	@ValueSource(strings = {"100@gmail.com"})
 	public void findUserByEmailNotFound(String email) {
 	
 		User user = userRepository.findByEmail(email);
